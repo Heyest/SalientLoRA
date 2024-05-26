@@ -29,7 +29,7 @@ The floder `scripts` contains examples of adapting LLaMA/LLaMA2 with SalientLoRA
 Execute the shell script directly as follows:
 
 ```
-sh examples/scripts/run_LLaMA_Alpaca.sh  
+sh scripts/run_LLaMA_Alpaca.sh  
 ```
 
 
