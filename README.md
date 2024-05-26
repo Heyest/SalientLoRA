@@ -75,9 +75,17 @@ We conduct experiments on the GLUE benchmark for NLU tasks, the XSum and CNN dat
 
 For details on replicating the results, please refer to the following directories: 
 
-`./NLU` contains the code to finetune DeBERTaV3-base with the GLUE benchmark, which including eight dataset: CoLA, SST-2, MRPC, QQP, STS-B, MNLI, QNLI, and RTE. 
+## Paper results replication
 
-`./NLG` contains the code to finetune BART-large and T5-base with the XSum and CNN datasets. 
+We conduct experiments on the GLUE benchmark for NLU tasks, the XSum and CNN datasets for NLG tasks, and the MT dataset for instruction tuning, separately fine-tuning encoder-only (DeBERTaV3-base), encoder-decoder (BART-large and T5-base), and decoder-only (LLaMA) models.
 
-`./Instruction_Tuning` contains the code to finetune LLaMA-7B and LLaMA2-7B with the Alpaca instruction tuning dataset. 
+For details on replicating the results, please refer to the following directories: 
+
+[./NLU](./NLU) contains the code to finetune DeBERTaV3-base with the GLUE benchmark, which including eight dataset: CoLA, SST-2, MRPC, QQP, STS-B, MNLI, QNLI, and RTE. 
+
+[./NLG](./NLG) contains the code to finetune BART-large and T5-base with the XSum and CNN datasets. 
+
+[./Instruction_Tuning](./Instruction_Tuning) contains the code to finetune LLaMA-7B and LLaMA2-7B with the Alpaca instruction tuning dataset. 
+
+
 
