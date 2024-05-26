@@ -18,6 +18,7 @@ SalientLoRA adaptively optimizes intrinsic ranks of LoRA via salience measuremen
   pip install -e loralib/ 
   ```
 
+
 2. Apply SVD-based decomposition to the model designated for fine-tuning. Subsequently, load the raw language model and set only the LoRA parameters as trainable.
 
   ```python
@@ -39,6 +40,7 @@ SalientLoRA adaptively optimizes intrinsic ranks of LoRA via salience measuremen
   # Mark only LoRA parameters as trainable by setting requires_grad to False for all other parameters 
   loralib.mark_only_lora_as_trainable(model)
   ```
+
 
 3. Apply `RankAllocator` to  adaptively allocate ranks during training.
 
@@ -69,11 +71,6 @@ mask_threshold = self.mask_to_target_rank(model, curr_rank)
 
 
 
-## Paper results replication
-
-We conduct experiments on the GLUE benchmark for NLU tasks, the XSum and CNN datasets for NLG tasks, and the MT dataset for instruction tuning, separately fine-tuning encoder-only (DeBERTaV3-base), encoder-decoder (BART-large and T5-base), and decoder-only (LLaMA) models.
-
-For details on replicating the results, please refer to the following directories: 
 
 ## Paper results replication
 
