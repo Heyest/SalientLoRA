@@ -1,0 +1,22 @@
+python -m torch.distributed.launch --master_port=8679 --nproc_per_node=1 \
+examples/text-classification/run_glue.py \
+--model_name_or_path microsoft/deberta-v3-base \
+--task_name stsb \
+--apply_lora --lora_type svd \
+--average_target_rank 2   --average_initial_rank 15   \
+--init_steps 800 --allocation_steps 2500 \
+--initial_time_window 10 --final_time_window 200\
+--beta =0.9 --gamma 2 --lambda_para 0.7
+--lora_module query,key,value,intermediate,layer.output,attention.output \
+--do_train --do_eval --max_seq_length 64 \
+--per_device_train_batch_size 8 --learning_rate 8e-4 \
+--num_train_epochs 25 --warmup_steps 100 \
+--cls_dropout 0.10 --weight_decay 0.00 \
+--evaluation_strategy steps --eval_steps 100 \
+--save_strategy steps --save_steps 10000 \
+--logging_steps 10 \
+--tb_writter_loginterval 100 \
+--report_to tensorboard \
+--seed 6 \
+--root_output_dir ./output/glue/mnli \
+--overwrite_output_dir

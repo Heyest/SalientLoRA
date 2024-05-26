@@ -1,0 +1,19 @@
+python ../run_tuning.py \
+--model_name_or_path luodian/llama-7b-hf \
+--dataset_name data/alpaca/train_conversation \
+--apply_lora \
+--lora_type svd --average_target_rank 64 --average_initial_rank 480 \
+--reg_orth_coef 0.1 \
+--initial_warmup 6000 --allocation_step 25000 \
+--initial_time_window 10 --final_time_window 200 \
+--beta 0.8 --gamma 2 --lambda_para 0.7\
+--lora_module q_proj,k_proj,v_proj,out_proj,fc1,fc2 \
+--per_device_train_batch_size 8 --learning_rate 5e-4 \
+--num_train_epochs 25 --num_warmup_steps 3000 \
+--max_source_length 768 --max_target_length 64 --max_length 768 \
+--pad_to_max_length --num_beams 8 \
+--per_device_eval_batch_size 8 \
+--seed 9 \
+--with_tracking \
+--tb_writter_loginterval 500 \
+--output_dir ../examples/summarization/output/bart-large/xsum
