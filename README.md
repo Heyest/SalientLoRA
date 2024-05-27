@@ -50,7 +50,7 @@ SalientLoRA adaptively optimizes intrinsic ranks of LoRA via salience measuremen
   # Initialize the RankAllocator 
   rankallocator = RankAllocator(
       model, target_average_rank=2, initial_average_rank=15,
-      init_warmup=500, rank_allocaiton_steps=3500, initial_window = 10, final_window = 200, total_step=3000, beta=0.9, gamma=2, lammbda=0.7, beta 0.9)
+      init_warmup=500, allocaiton_steps=3500, initial_window = 10, final_window = 200, total_step=3000, beta=0.9, gamma=2, lammbda=0.7, beta 0.9)
   ```
 The RankAllocator primarily comprises two parts.
 
