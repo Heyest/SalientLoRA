@@ -72,7 +72,7 @@ mask_threshold = self.mask_to_target_rank(model, curr_rank)
 
 
 
-## Paper results replication
+## Paper Results Replication
 
 We conduct experiments on the GLUE benchmark for NLU tasks, the XSum and CNN datasets for NLG tasks, and the MT dataset for instruction tuning, separately fine-tuning encoder-only (DeBERTaV3-base), encoder-decoder (BART-large and T5-base), and decoder-only (LLaMA) models.
 
